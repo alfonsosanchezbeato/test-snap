@@ -1,0 +1,21 @@
+name: test
+version: 0
+summary: Test snap
+description: Test snap, for testing
+confinement: strict
+
+# slots:
+#   gw-button:
+#     interface: joystick
+#     path: /dev/input/event1
+
+apps:
+  test-snap:
+    command: usr/bin/test-snap
+    plugs: [joystick]
+
+parts:
+  # Testing binary
+  test-snap:
+    plugin: cmake
+    source: src
